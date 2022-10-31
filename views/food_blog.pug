@@ -1,0 +1,42 @@
+doctype html
+head
+  title Food Blog
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js')
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Sacramento&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='css/styles.css')
+aside#leftside
+aside#rightside
+#container
+  header
+    |  Food Blog
+  main
+    aside#photos
+      img(src='./images/chili.jpg' alt='White Chicken Chili' width='180')
+    h2
+      | comments
+    section#blogposts
+      ul
+        li#posts(v-for='post in posts')
+          span.profile
+            img(v-bind:src='../' v-on:click='authorinfo(posts, post)')
+          span.author Brianna
+          |  &mdash; 
+          span.date February 18, 2021 @ 3:30 pm
+          span.reply REPLY
+          p
+            | Was amazing! My Walmart didn&rsquo;t have coriander in stock and didn&rsquo;t have ground cumin. I used serrano instead of jalape&ntilde;o. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!
+        li#posts(v-for='post in posts')
+          span.profile
+            img(v-bind:src='./images/profile.png' v-on:click='authorinfo(posts, post)')
+          span.author Brianna
+          |  &mdash; 
+          span.date February 13, 2021 @ 12:58 pm
+          span.reply REPLY
+          p
+            | Was amazing! My Walmart didn&rsquo;t have coriander in stock and didn&rsquo;t have ground cumin. I used serrano instead of jalape&ntilde;o. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!
+  footer
+    | &copy; Copyright FOOD BLOG
+
